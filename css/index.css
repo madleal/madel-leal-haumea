@@ -1,0 +1,35 @@
+body{
+    background-color:rgb(198, 249, 233);
+    color: rgb(23, 60, 60);
+    font-family: "Roboto";
+}
+section{
+   padding: 32px;
+}
+
+h1{
+    text-align: center;
+    font-size: 52px;
+    font-family: cursive;
+}
+
+h1,h2,h3{
+    font-weight: bolder;
+    color: black;
+}
+
+li{
+    border:1px solid purple;
+    max-width: fit-content;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+a{
+    color:deeppink;
+    text-decoration: none;
+}
+
+a:hover {
+    color:rgb(239, 154, 199);
+}
