@@ -35,4 +35,46 @@ skills.forEach(skill => {
     skillsList.appendChild(skillItem);
 });
 
+//code to handle form submission and display messages in the list:
 
+document.addEventListener('DOMContentLoaded', function() {
+    const messageForm = document.forms.leave_message;
+
+    messageForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        // Retrieve form field values
+        const userName = messageForm.usersName.value;
+        const userEmail = messageForm.usersEmail.value;
+        const userMessage = messageForm.usersMessage.value;
+
+        // Clear the form
+        messageForm.reset();
+
+        // Display messages in list
+        const messageSection = document.querySelector('#messages');
+        const messageList = messageSection.querySelector('ul');
+
+        const newMessage = document.createElement('li');
+        newMessage.innerHTML = `
+            <span>${userName}:</span>
+            <span>${userMessage}</span>
+        `;
+
+        const editButton = document.createElement('button');
+        editButton.innerText = "edit";
+        editButton.type = "button";
+        editButton.addEventListener('click', function() {
+            const newMessageText = prompt("Enter the new message:");
+            if (newMessageText) {
+                newMessage.querySelector('span:nth-child(2)').textContent = newMessageText;
+            }
+        });
+
+        newMessage.appendChild(editButton);
+        messageList.appendChild(newMessage);
+
+        // Show the messages section
+        messageSection.style.display = 'block';
+    });
+});
