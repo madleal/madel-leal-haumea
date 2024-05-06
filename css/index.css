@@ -109,3 +109,10 @@ a:hover {
     }
 }
 
+#messages {
+    display: none; /* Hide the messages section by default */
+}
+
+#messages:not(:empty) {
+    display: block; /* Display the messages section when it's not empty */
+}
